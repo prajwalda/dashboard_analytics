@@ -1,0 +1,158 @@
+@import "_mixin";
+@import "mediaquery";
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .red{
+    color: red;
+  }
+
+  .purple{
+    color: rgb(47,0,255);
+  }
+
+  .green{
+    color: rgb(0,195,0);
+  }
+
+
+  .adminContainer{
+    @include grid(1fr 4fr,2rem); 
+    height: inherit;
+    background-color: rgb(247,247,247);
+
+    > aside {
+      width: 100%;
+      background-color: white;
+      padding: 1rem;
+      z-index: 10;
+      overflow-y: auto;
+      &::-webkit-scrollbar{
+        display: none;
+      }
+
+      > div{
+        margin: 2rem 1rem;
+        > h5{
+          @include heading(2px);
+          opacity: 0.8;
+          margin: 1rem 0;
+        }
+
+        > ul {
+          @include flex(column,unset,unset,0.5rem);
+          list-style: none;
+
+          > li{
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+
+            a{
+              color: rgba(0,0,0,0.825);
+              @include flex(row,unset);
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  #hamburger {
+    display: grid;
+    place-items: center;
+    @include square(3rem);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgba(44, 104, 255);
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 9;
+  }
+
+  #close-sidebar {
+    width: 80%;
+    margin: 1rem auto;
+    display: block;
+    padding: 0.75rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(168, 2, 2);
+    color: white;
+    border-radius: 10px;
+  }
+
+  
+  .charts {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    > .chart-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 2rem;
+     
+    }
+    
+  }
+  
+  
+  
+  .bar {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #f0f0f0;
+    
+    
+    >input[type="text"] {
+      flex: 1;
+      margin: 0 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 0px solid #ccc;
+      background-color: #f0f0f0;
+      outline: none;
+    }
+
+    >img {
+      width: 30px; 
+      height: 30px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+    }
+
+    >svg {
+      width: 20px; 
+      height: 20px; 
+    }
+  }
+  
+  
+  
+ 
+  

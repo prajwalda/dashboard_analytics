@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, useEffect } from 'react'
+import { lazy } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Loading from './components/Loading';
+import jsonData from "./db.json"
+import { useDispatch } from 'react-redux';
+import { setData } from "./redux/actions.js"; 
 
-function App() {
+const Dashboard = lazy(()=> import("./pages/dashboard"));
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setData(jsonData));
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Suspense fallback={<Loading/>}>
+        <Routes>
+          <Route path='/' element={<Dashboard/>} />
+        
+        {/* Charts */}
+        
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
