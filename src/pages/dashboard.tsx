@@ -28,20 +28,20 @@ const dashboard = () => {
         <hr />
         
         <div className="chart-row">
-        <div className="chart" style={{ width: '35rem' }}>
+        <div className="chart" >
             <LineChartGenerator />
           </div>
          
-          <div className="chart" style={{ width: '35rem' }}>
+          <div className="chart" >
             <PlatformUsageChart />
           </div>
-          <div className="chart" style={{ width: '35rem' }}>
+          <div className="chart" >
             <CountryUsageChart />
           </div>
-          <div className="chart" style={{ width: '35rem' }}>
+          <div className="chart" >
             <Barchartgenerator />
           </div>
-          <div className="chart" style={{ width: '35rem' }}>
+          <div className="chart" >
             <PieChartGenerator />
           </div>
           
