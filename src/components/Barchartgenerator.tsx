@@ -8,7 +8,8 @@ Chart.register(CategoryScale);
 
 const Barchartgenerator: React.FC = () => {
     const categoryDistribution = useSelector((state: any) => state.category_distribution);
-
+    // console.log(categoryDistribution)
+    // we can console log to see the data we are getting
     const [chartData, setChartData] = useState<any>({
         labels: [],
         datasets: [{

@@ -46,22 +46,24 @@ const AdminSIdebar = () => {
       >
       <h1>Analytics</h1>
       <div>
+        <Link to={"/"}>
         <h5>DASHBOARD</h5>
+        </Link>
         <ul>
           <li>
-            <Link to={"/"}>
+            <Link to={"/bar"}>
               <FaChartBar />
               Bar
             </Link>
           </li>
           <li>
-            <Link to={"/"}>
+            <Link to={"/pie"}>
               <FaChartPie />
               Pie
             </Link>
           </li>
           <li>
-            <Link to={"/"}>
+            <Link to={"/line"}>
               <FaChartLine />
               Line
             </Link>

@@ -5,6 +5,9 @@ import { useSelector } from 'react-redux';
 const CountryUsageChart = () => {
   const byCountryData = useSelector((state: any) => state.usage_statistics.by_country);
   const [chartData, setChartData] = useState<any>({
+    // console.log(byCountryData)
+    // we can console log to see the data we are getting
+
     labels: [],
     datasets: [{
       label: 'Usage by Country',

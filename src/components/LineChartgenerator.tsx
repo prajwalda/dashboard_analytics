@@ -8,7 +8,8 @@ Chart.register(CategoryScale, LinearScale);
 
 const LineChartGenerator = () => {
   const responseTimes = useSelector((state: any) => state.response_times);
-
+  // console.log(responseTimes);
+  // we can console to see reponse time 
   const [dailyChartData, setDailyChartData] = useState<any>({
     labels: [],
     datasets: [{
